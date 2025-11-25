@@ -17,3 +17,24 @@ type Workout struct {
 	Notes	*string		`json:"notes,omitempty"`
 	CreatedAt time.Time	`json:"created_at"`
 }
+
+
+type WorkoutExercise struct {
+	ID             int `json:"id"`
+	WorkoutID      int `json:"workout_id"`
+	ExerciseID     int `json:"exercise_id"`
+	OrderInWorkout int `json:"order_in_workout"`
+}
+
+
+type Set struct {
+	ID                  int         `json:"id"`
+	WorkoutExerciseID   int         `json:"workout_exercise_id"`
+	SetNumber           int         `json:"set_number"`
+	Weight              float64     `json:"weight"`
+	Repetitions         int         `json:"repetitions"`
+	RPE                 *float32    `json:"rpe,omitempty"`
+	Technique           *string     `json:"technique,omitempty"`
+	Failed              bool        `json:"failed"`
+	WarmUp              bool        `json:"warm_up"`
+}
